@@ -14,11 +14,11 @@ class MessageProcessor {
                 var matches = timeRegex.exec(content);
                 var reserveTime = matches[1];
 
-                firebaseDatabase.ref('/FbChatBot/Appointments/').push({
-                    sendorId: sendorId,
-                    reserveTime: reserveTime,
-                    message: content
-                });
+                // firebaseDatabase.ref('/FbChatBot/Appointments/').push({
+                //     sendorId: sendorId,
+                //     reserveTime: reserveTime,
+                //     message: content
+                // });
 
                 return MessageBuilder.simpleMessage("Chúng tôi đã đặt lịch lúc " + reserveTime + " giờ cho bạn");
             }
