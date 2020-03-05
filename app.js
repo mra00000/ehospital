@@ -4,8 +4,6 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-var firebase = require('firebase');
-
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var webhookRouter = require('./routes/webhook');
@@ -21,18 +19,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
-const firebaseConfig = {
-  apiKey: "AIzaSyB3WSWGV1DJuKcNHfM6P9LTZaSUqRK-nRo",
-  authDomain: "ehospital-270205.firebaseapp.com",
-  databaseURL: "https://ehospital-270205.firebaseio.com/",
-};
-
-firebase.initializeApp(firebaseConfig)
-
-firebase.database().ref("/minhdeptrai").set({
-  "minh": "dep trai"
-})
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
