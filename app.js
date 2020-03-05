@@ -24,6 +24,34 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/webhook', webhookRouter);
 
+// var request = require('request');
+// const SEND_API = 'https://graph.facebook.com/v2.6/me/messages';
+// const SEND_TOKEN = 'EAAlC4HKTV5IBAEc7fqWOlCMAvk61oCumRP5IZACuPJdccelgAPZAmiRZCvZBdsTuODy7NgLrdz3FmdvancAecQlfcKj9Iq3ZCwYaZA6LDti3vTcSlpq1MeX8luA60Pj8GOfZChlaHxqEqHLuwsYkMpDi6EkugBKShZAndgGPNwErjgZDZD';
+// const VERIFY_TOKEN = '123456asasas';
+// var data = {
+//   "greeting":[
+//     {
+//       "locale":"default",
+//       "text":"Hello {{user_first_name}}!"
+//     }
+//   ]
+// };
+// request({
+//   "url": SEND_API,
+//   "qs": { "access_token": SEND_TOKEN },
+//   "method": "post",
+//   "json": data
+// }, function (err, res, body) {
+//   if (!err) {
+//     console.log("response sent: ", body);
+//   } else {
+//     console.log("error occurred");
+//   }
+// });
+
+
+
+
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   next(createError(404));

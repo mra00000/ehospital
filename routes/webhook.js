@@ -31,6 +31,7 @@ router.post('/', function (req, res, next) {
   if (body.object === 'page') {
     body.entry.forEach(function (entry) {
       let webhookEvent = entry.messaging[0];
+      console.log("new event:", webhookEvent);
       var senderId = webhookEvent.sender.id;
       if (webhookEvent.message) {
         var content = webhookEvent.message;
