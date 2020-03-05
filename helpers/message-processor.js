@@ -1,6 +1,4 @@
 var MessageBuilder = require('../helpers/message-builder');
-var firebase = require('firebase');
-var firebaseDatabase = firebase.database();
 
 class MessageProcessor {
     constructor() {
