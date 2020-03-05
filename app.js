@@ -5,7 +5,6 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var firebase = require('firebase');
-var firebaseApp = require('firebase/app');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -29,7 +28,11 @@ const firebaseConfig = {
   databaseURL: "https://ehospital-270205.firebaseio.com/",
 };
 
-firebaseApp.initializeApp(firebaseConfig)
+firebase.initializeApp(firebaseConfig)
+
+firebase.database().ref("/minhdeptrai").set({
+  "minh": "dep trai"
+})
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
