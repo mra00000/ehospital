@@ -34,7 +34,7 @@ router.post('/', function (req, res, next) {
       var senderId = webhookEvent.sender.id;
       if (webhookEvent.message) {
         var content = webhookEvent.message;
-        var response = messageProcessor.process(content);
+        var response = messageProcessor.process(content, senderId);
         if (response) sendMessage(senderId, response);
       }
 
