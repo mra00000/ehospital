@@ -1,5 +1,7 @@
 var MessageBuilder = require('../helpers/message-builder');
-var firebaseDatabase = require('firebase').database();
+var firebase = require('firebase');
+var firebaseDatabase = firebase.database();
+
 class MessageProcessor {
     constructor() {
         this.keywords = {
@@ -12,7 +14,7 @@ class MessageProcessor {
                 var matches = timeRegex.exec(content);
                 var reserveTime = matches[1];
 
-                firebaseDatabase.ref('/FbChatBot/Appointments').push({
+                firebaseDatabase.ref('/FbChatBot/Appointments/').push({
                     sendorId: sendorId,
                     reserveTime: reserveTime,
                     message: content
