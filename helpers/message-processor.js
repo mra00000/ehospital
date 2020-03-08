@@ -3,7 +3,7 @@ var MessageBuilder = require('../helpers/message-builder');
 class MessageProcessor {
     constructor() {
         this.keywords = {
-            "hello": "Chào {{user_first_name}}, chúng tôi có thể làm gì cho bạn ?",
+            "hello": "Chào, chúng tôi có thể làm gì cho bạn ?",
             "chào": function(content) {
                 return MessageBuilder.simpleMessage("Chào, chúc bạn ngày mới vui vẻ");
             },
